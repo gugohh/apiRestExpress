@@ -15,9 +15,11 @@ const filmObject = {
         res.status(200)
     },
     filmPost: async (req, res) => { 
-       
-        let name = await req.body.title 
-        res.status(308)
+ 
+        console.log("Se ha realizado el POST");
+        //let msj = "Se ha guardado"
+        res.status(200).send(req.body)
+     
     },
     putFilm: (req, res) => {
         res.status(200).send('Creado en el PUT') 
