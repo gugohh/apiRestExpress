@@ -4,7 +4,7 @@ const film = require('../utiles/films')
 const filmObject = {
     
     home: async(req, res) => {
-        console.log('hola');
+        console.log('holag');
         let title = req.params.title
         let data = await getFilm.fetchFilm(title)
         res.status(200).json(data)
