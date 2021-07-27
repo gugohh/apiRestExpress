@@ -1,24 +1,29 @@
-const {getFilm} = require('../utiles/films')
-const getFilm  = require('../utils/films')
+const getFilm = require('../utiles/films')
+const film = require('../utiles/films')
 
 const filmObject = {
-    home: (req, res) => {
+    
+    home: async(req, res) => {
+        console.log('hola');
         let title = req.params.title
-        let data = await getFilm(title)
-        res.status(200).render('home',{data})
+        let data = await getFilm.fetchFilm(title)
+        res.status(200).json(data)
     },
     film: async (req, res) => {
         let name = req.params.title 
-        let film = await getFilm .fetchFilm(name)
-        res.status(200).render('film', { film }) 
+        let film = await getFilm.fetchFilm(name)
+        res.status(200)
     },
     filmPost: async (req, res) => { 
        
         let name = await req.body.title 
-        res.status(308).redirect(`/film/${name}`) 
+        res.status(308)
     },
     putFilm: (req, res) => {
         res.status(200).send('Creado en el PUT') 
+    },
+    filmDelete: (req,res) => {
+
     },
     
     err: (req, res) => {
