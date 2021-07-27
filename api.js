@@ -2,11 +2,11 @@ const express = require('express')
 const process = require('process')
 
 
-const dotenv = require('dotenv').config()
+require('dotenv').config()
 const router = require('./routes/routes')
 
 const app = express()
-const port = process.env.PORT
+const port = process.env.PORT || 8080;
 
 //Motor de vista
 app.set('view engine', 'pug')
