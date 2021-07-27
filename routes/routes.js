@@ -6,6 +6,9 @@ router.get('/film/:title', controllers.films)
 
 router.post('/film', controllers.filmPost)
 
+router.put('/film' ,controllers.putFilm)
+
+
 router.delete('/film', controllers.filmDelete)
 
 
