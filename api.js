@@ -17,7 +17,6 @@ app.use('/api', router)
 
 app.get('*', (req,res) =>{
     res.status(404).send('Sorry...404 not found')
-    res.status(500).send('Sorry...Error 500');
 })
 
 app.listen(port, () =>{
