@@ -12,6 +12,7 @@ const port = process.env.PORT;
 app.use(express.json())//Convertimos todo lo que nos llegan a json
 
 //Rutas
+//Rutas
 /* app.use('/', router) */
 app.use('/api', router)
 
@@ -20,6 +21,6 @@ app.get('*', (req,res) =>{
     res.status(500).send('Sorry...Error 500');
 })
 
-app.listen(port, () =>{
+app.listen(3000, () =>{
     console.log(`Example app listening at http://localhost:${port}`);
 })
