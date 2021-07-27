@@ -1,15 +1,14 @@
 const router = require('express').Router() 
-const controllers = require('../controllers/controllers') 
+const filmObject = require('../controllers/controllers') 
 
-router.get('/', controllers.home) 
-router.get('/film/:title', controllers.films) 
+router.get('/film/:title', filmObject.home) 
 
-router.post('/film', controllers.filmPost)
+router.post('/film', filmObject.filmPost)
 
-router.put('/film' ,controllers.putFilm)
+router.put('/film' ,filmObject.putFilm)
 
 
-router.delete('/film', controllers.filmDelete)
+router.delete('/film', filmObject.filmDelete)
 
 
 module.exports = router
