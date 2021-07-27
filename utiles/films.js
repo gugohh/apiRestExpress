@@ -13,8 +13,8 @@ const getFilm = {
     }
 }
 
-getFilm
-     .fetchFilm()
-     .then((data) => console.log(data))
+// getFilm
+//      .fetchFilm()
+//      .then((data) => console.log(data))
  
 module.exports = getFilm
