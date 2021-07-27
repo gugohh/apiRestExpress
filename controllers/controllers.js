@@ -4,14 +4,20 @@ const film = require('../utiles/films')
 const filmObject = {
     
     home: async(req, res) => {
+        console.log('holag');
         let title = req.params.title
         let data = await getFilm.fetchFilm(title)
         res.status(200).json(data)
     },
+    film: async (req, res) => {
+        let name = req.params.title 
+        let film = await getFilm.fetchFilm(name)
+        res.status(200)
+    },
     filmPost: async (req, res) => { 
-        console.log("hola");
-        let msj = "Se ha guardado"
-        res.status(200).send('Hola')
+       
+        let name = await req.body.title 
+        res.status(308)
     },
     putFilm: (req, res) => {
         res.status(200).send('Creado en el PUT') 
