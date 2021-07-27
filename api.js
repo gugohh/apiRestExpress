@@ -1,9 +1,9 @@
 const express = require('express')
+const router = require('./routes/routes')
 const process = require('process')
 
 
 require('dotenv').config()
-const router = require('./routes/routes')
 
 const app = express()
 const port = process.env.PORT || 8080;
@@ -13,7 +13,8 @@ app.set('view engine', 'pug')
 app.set('views', '/views')
 
 //Middleware
-app.use(express.json())
+app.use(express.json())//Convertimos todo lo que nos llegan a json
+app.use(express.urlencoded({extended:false})) //Para recibir los datos del formulario.
 
 //Rutas
 app.use('/', router)

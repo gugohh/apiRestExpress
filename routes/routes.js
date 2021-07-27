@@ -1,4 +1,3 @@
-
 const router = require('express').Router() 
 const controllers = require('../controllers/controllers') 
 
@@ -9,6 +8,8 @@ router.post('/film', controllers.filmPost)
 
 router.put('/film' ,controllers.putFilm)
 
+
+router.delete('/film', controllers.filmDelete)
 
 
 module.exports = router

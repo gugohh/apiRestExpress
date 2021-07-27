@@ -1,8 +1,11 @@
+const {getFilm} = require('../utiles/films')
 const getFilm  = require('../utils/films')
 
 const filmObject = {
     home: (req, res) => {
-        res.status(200).render('home') 
+        let title = req.params.title
+        let data = await getFilm(title)
+        res.status(200).render('home',{data})
     },
     film: async (req, res) => {
         let name = req.params.title 
